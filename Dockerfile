@@ -13,9 +13,10 @@ RUN useradd --create-home --shell /bin/bash ctrl \
 
 USER ctrl
 
-RUN mkdir repo/
-
 WORKDIR /home/ctrl/repo
+
+RUN mkdir repo \
+	&& cd repo
 
 CMD jupyter notebook --NotebookApp.token='' --ip 0.0.0.0 --port 1234 --allow-root --no-browser
 
