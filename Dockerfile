@@ -15,7 +15,7 @@ ENV PATH="$PATH:/home/ctrl/vrt-env/pyctrl/bin:/home/ctrl/.local/bin"
 	
 RUN pip3 install numpy matplotlib scipy control ipython jupyter notebook
 
-RUN mkdir repo && cd repo
+RUN mkdir /home/ctrl/repo
 
 WORKDIR /home/ctrl/repo
 
