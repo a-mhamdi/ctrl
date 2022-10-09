@@ -13,7 +13,7 @@ RUN useradd --create-home --shell /bin/bash ctrl \
 
 USER ctrl
 
-WORKDIR /home/ctrl/repo
+WORKDIR /home/ctrl
 
 RUN mkdir repo \
 	&& cd repo
