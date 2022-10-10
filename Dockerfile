@@ -7,13 +7,13 @@ RUN useradd --create-home --shell /bin/bash ctrl \
 
 USER ctrl
 
-RUN cd /home/ctrl \
+RUN echo "cd /home/ctrl \
 	&& mkdir -p vrt-env/pyctrl \
-	&& python3 -m venv vrt-env/pyctrl
+	&& python3 -m venv vrt-env/pyctrl"
 	
-ENV PATH="$PATH:/home/ctrl/vrt-env/pyctrl/bin:/home/ctrl/.local/bin"
+ENV PATH="$PATH:/home/ctrl/.local/bin"
 	
-RUN pip3 install numpy matplotlib scipy control ipython jupyter notebook
+RUN python3 -m pip install numpy matplotlib scipy control ipython jupyter notebook
 
 RUN mkdir /home/ctrl/repo
 
